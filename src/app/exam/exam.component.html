@@ -1,0 +1,30 @@
+<div class="parent">
+  <div layout-gt-sm="column" style="width: 400px;" >
+    <div *ngFor="let i of formList;let index = index" >
+    <form [formGroup]="formList[index]" (ngSubmit)="submitAnswer()" *ngIf="no==index">
+      <table>
+        <tr>
+          <td><div style="display: inline-block;">{{index+1}}. {{questions.questionInfo[no].title}}</div>
+            <div style="display: inline-block;font-size: 14px;color:rgb(238, 28, 24);padding-bottom: 10px;">&nbsp;&nbsp;(Time : {{display}})</div>
+          </td>
+        </tr>
+        <div *ngFor="let answer of answers; let index = index">
+          <tr>
+            <td style="padding-top: 10px;">
+             <input type="checkbox" name="answer{{answer.questionAnswerId}}" (change)="selectAnswer($event,answer.questionAnswerId)"
+              id="{{answer.questionAnswerId}}" [checked]="isChecked(answer.questionAnswerId)" />{{answer.answer}}
+            </td>
+          </tr>
+        </div>
+        <tr>
+          <td style="padding-top: 20px;">
+            <button mat-button class="button-solid" (click)="prevQuestion()" [disabled]="no == 0">Prev</button>
+            <button mat-button class="button-solid" (click)="nextQuestion()" [disabled]="no >= questions.totalQuestion-1" style="text-align: right;"> Next</button>
+            <button mat-flat-button class="button-solid" color="primary" type="submit" *ngIf="no == formList.length-1">Submit</button>
+          </td>
+        </tr>
+      </table>
+     </form>
+     </div> 
+  </div>
+</div>  

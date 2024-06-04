@@ -1,0 +1,10 @@
+  <div class="parent">
+    <div id="chart">
+     <apx-chart [series]="chartOptions!.series!" [chart]="chartOptions!.chart!" [labels]="chartOptions!.labels"
+      [responsive]="chartOptions!.responsive!" [colors]="chartOptions!.colors!"></apx-chart>
+    </div>
+    <div style="text-align: center;"> คุณทำได้ {{data.score}} เต็ม {{data.fullscore}} คะแนน
+    </div>
+    <br>
+    <button mat-flat-button class="button-solid" color="primary" (click)="NavigateCategories()">OK</button>
+</div>

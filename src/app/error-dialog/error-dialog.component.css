@@ -1,0 +1,11 @@
+.button-solid{
+    border: 1px solid gray;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }

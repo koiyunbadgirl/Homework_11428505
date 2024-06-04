@@ -1,0 +1,10 @@
+.flexExpand {
+    flex: 1 1 auto;
+    height: 50px;
+}
+
+.button-solid{
+  border: 1px solid gray;
+  font-size: 18px;
+  font-weight: bold;
+}

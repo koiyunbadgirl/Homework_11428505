@@ -1,0 +1,51 @@
+<div class="parent">
+  <div layout-gt-sm="column" style="min-width: 350px; max-width: 400px;border: 1px solid gray;" >
+    <mat-card flex-gt-sm class="push">
+      <div style="text-align:center;">
+        <mat-card-title style="font-size:25px; font-weight: bold;">Login</mat-card-title>
+      </div>
+      <div style="text-align:center;">
+      <mat-card-content>
+        <form [formGroup]="loginForm" class="form" (ngSubmit)="onLogin()" >
+          <table>
+            <tr>
+              <td>
+                <div class="parent">
+                 <mat-form-field class="mat-form-field"> 
+                    <div>
+                      <label style="font-size: 14px;">Enter your ID</label>
+                      <input matInput placeholder="" formControlName="username" required>
+			                @if (loginForm.hasError('required')) 
+                      {
+        			        <mat-error>Username is required!!</mat-error>
+        		          }
+                    </div>
+                  </mat-form-field>
+                </div>
+              </td>
+             </tr>
+             <tr>
+                <td>
+                 <mat-form-field class="mat-form-field">
+                      <div>
+                       <label style="font-size: 14px;">Enter your password</label>
+                        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" type="password" required />
+	                    </div>
+                  	  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                     </button>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <button class="btn btn-primary btn-block align-right button-solid" mat-button [disabled]="!loginForm.valid">Login</button>
+                </td>
+              </tr>
+	          </table>
+          </form>
+        </mat-card-content>
+      </div>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="parent">
+  <table>
+      <tr style="height: 40px;">
+        <td> <label style="font-size: 20px;">กรุณาเลือกหมวดหมู่ของคำถามด้านล่าง</label></td>
+      </tr>
+      @for (link of links; track link) {
+      <tr>
+        <td>
+          <a matListItemTitle  routerLink="/detail/{{link.questionCategoryId}}" routerLinkActive="router-link-active">ชุดที่ {{$index+1}} {{
+          link.title }} 
+          </a>
+        </td> 
+      </tr>
+      } 
+  </table> 
+</div>
